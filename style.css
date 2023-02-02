@@ -68,7 +68,6 @@ input[type=submit]:hover {
 header {
     width: 100vw;
     height: 80vh;
-     background-image: url('./img/1253.jpg');
     background-position: bottom;
     background-size: cover;
     display: flex;
@@ -225,9 +224,7 @@ p {
 
 /* Mobile device */
 @media only screen and (max-width:850px){
-   header {
-    background-image: url('./img/header-bg.png');
-    }
+   
     .menu-btn {
         display: block;
     }
