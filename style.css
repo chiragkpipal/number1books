@@ -75,6 +75,18 @@ header {
     align-items: flex-end;
     justify-content: center;
 }
+@media only screen and (max-width: 400px) {
+  header {
+    background-color: black;
+      width: 100vw;
+    height: 80vh;
+    background-image: none;
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
 .header-content {
     margin-bottom: 100px;
     color: whitesmoke;
