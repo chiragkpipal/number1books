@@ -66,6 +66,8 @@ input[type=submit]:hover {
 }
 
 header {
+      background-image: url('./img/1253.jpg');
+  
     width: 100vw;
     height: 80vh;
     background-position: bottom;
@@ -223,8 +225,11 @@ p {
 
 
 /* Mobile device */
-@media only screen and (max-width:850px){
-   
+@media only screen and (max-width:400px){
+   header {
+    
+      background-image: url('./img/header-bg.png');
+  }
     .menu-btn {
         display: block;
     }
