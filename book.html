@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number 1 Books</title>
+    <!-- ==== CSS ==== -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1 class="logo">NUMBER 1 BOOKS</h1>
+        <ul class="nav-links">
+             <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="book.html">The Book</a></li>
+<li class="ctn"><a  href="donate.html">Donate Books Now</a></li>
+            <li><a href="blog.html">Blog</a></li>
+  <li><a href="about.html">About</a></li>
+            <li><a href="index.html">Contact</a></li>
+           
+        </ul>
+       <div class="mobile-nav">
+        <img src="./img/menu-btn.png" alt="" class="menu-btn">
+        <h1 class="close-btn">X</h1>
+       </div>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <h3>The Book</h3>
+            <div class="line"></div>
+            <h2>The Healing Hands Book</h2>
+<br>
+            <a href="book.html" class="ctn">See the book</a>
+ <a href="book.html" class="ctn">Learn More</a>
+        </div>
+    </header>
+
+    <!-- == Events == -->
+    <section class="events">
+        <div class="title">
+            <h1></h1>
+            <div class="line"></div>
+        </div>
+
+
+    <center>
+<p>Healing Hands is a valuable booklet which is designed for sick or injured children who are in hospitals across Canada. The book is filled with various activities designed to help the children pass the time and give them something fun to do while they are in the hospital. Filled with arts and crafts, puzzles, word games, short stories, jokes, and health and welfare information, the book will provide the children with hours of enjoyment and great information.
+
+The booklets are $5 per copy and valuable members of the business community can donate as many books as they would like to their local health care facility. It is only through this valuable support that make these books possible and appreciated so much by the children and their families.
+
+</p>
+
+<br>
+  <a href="donate.html" class="ctn">Donate Books Now</a>
+</center>
+<br>
+</div>
+<div style="height:480px; width:100%; overflow:hidden;">
+<iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=fu3q122lc" width="100%" height="560" seamless="seamless" scrolling="no" frameborder="0" allowfullscreen></iframe></div>
+                </div>
+    </section>
+ 
+      <link rel="stylesheet" href="footer/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  
+ <footer>
+   <div class="content">
+     <div class="left box">
+       <div class="upper">
+         <div class="topic">About us</div>
+         <p>For over 25 years we have been creating and distributing activity booklets to sick and injured children in hospitals nationwide. The name of our booklet is also our mission statement. "Healing Hands."</p>
+       </div>
+       <div class="lower">
+         <div class="topic">Contact us</div>
+         <div class="phone">
+           <a href="#"><i class="fas fa-phone-volume"></i>+1 8776612665</a>
+         </div>
+         <div class="email">
+           <a href="#"><i class="fas fa-envelope"></i>number1publications@live.ca</a>
+         </div>
+       </div>
+     </div>
+     <div class="middle box">
+       <div class="topic">Our Supporters</div>
+       <div><img src="img/img3.png" width="200px"></div>
+         <div><img src="img/img4.png" width="200px"></div>
+       <div><img src="img/img5.png" width="200px"></div>
+     
+     </div>
+     <div class="right box">
+       <div class="topic">Social Media</div>
+       
+         
+             <div class="icons">
+    <a href="#" class="fb"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+    <a href="#" class="insta"><i class="fab fa-instagram"></i></a>
+    <a href="#" class="yt"><i class="fab fa-youtube"></i></a>
+  </div>
+         </div>
+       </form>
+     </div>
+   </div>
+   <div class="bottom">
+     <p>Copyright © 2022 <a href="#">Number 1 Books</a> All rights reserved</p>
+   </div>
+ </footer>
+
+    <script>
+        const mobileNav = document.querySelector('.mobile-nav')
+        const menuBtn = document.querySelector('.menu-btn')
+        const navlinks = document.querySelector('.nav-links')
+        const closeBtn = document.querySelector('.close-btn')
+
+        mobileNav.addEventListener('click',(e)=>{
+            navlinks.classList.toggle('mobile-menu')
+            if(e.target === menuBtn){
+                menuBtn.replaceWith(closeBtn)
+                closeBtn.style.display = 'block'
+            }
+            if(e.target === closeBtn){
+                closeBtn.replaceWith(menuBtn)
+            }
+        })
+    </script>
+</body>
+</html>

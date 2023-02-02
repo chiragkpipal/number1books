@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number 1 Books</title>
+    <!-- ==== CSS ==== -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1 class="logo">NUMBER 1 BOOKS</h1>
+        <ul class="nav-links">
+              <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="book.html">The Book</a></li>
+<li class="ctn"><a  href="donate.html">Donate Books Now</a></li>
+            <li><a href="blog.html">Blog</a></li>
+  <li><a href="about.html">About</a></li>
+            <li><a href="index.html">Contact</a></li>
+          
+        </ul>
+       <div class="mobile-nav">
+        <img src="./img/menu-btn.png" alt="" class="menu-btn">
+        <h1 class="close-btn">X</h1>
+       </div>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <h3>Serving your community for over 25 years</h3>
+            <div class="line"></div>
+            <h2>Supported solely by the community and treasured by the children in hospitals nationwide since 1996.</h2>
+<br>
+            <a href="book.html" class="ctn">See the book</a>
+ <a href="book.html" class="ctn">Learn More</a>
+        </div>
+    </header>
+
+    <!-- == Events == -->
+    <section class="events">
+        <div class="title">
+            <h1></h1>
+            <div class="line"></div>
+        </div>
+
+
+    <center>
+<h3>The books are $5 per copy and all members of the community are welcome to donate as many books as they would like to their local health care facility. It is only through this valuable support that make these books possible and appreciated so much by the children and their families.</h3>
+<br>
+   <div class="line"></div>
+<h5>Your Gift</h5>
+                              
+                                <p>*Receive a free book for yourself with a minimum order of 10 books.</p>
+
+  <p>We are capable of delivering as many books as you would like. The minimum is 5 books.</p>
+                               
+            <div class="line"></div> <div class="buttons">
+                                    <a style="color: #ec2F4B;" id="5" class="button is-primary">5 books</a>
+                                    <a style="color: #ec2F4B;" id="10" class="button is-outlined">10 books</a>
+                                    <a style="color: #ec2F4B;" id="20" class="button is-outlined">20 books</a>
+                                    <a style="color: #ec2F4B;" id="50" class="button is-outlined">50 books</a>
+                                    <a style="color: #ec2F4B;" id="100" class="button is-outlined">100 books</a>
+                                    <a style="color: #ec2F4B;" id="0" class="button is-outlined" style="width:80px">Custom</a>
+                                    <input id="cInput" class="input" type="number" placeholder="200" oninput="calculate(true)" style="display:none;width:80px;margin-bottom:.5rem">
+                                </div>
+                                <p><strong>Total: $<span id="amount">25.00</span></strong></p>
+                            </div>
+
+
+
+<form class="form" action="form.html" method="POST">
+    
+      <input type="text" name="name" id="name" placeholder="Enter your name" >
+     
+      <input type="email" name="email" id="email" placeholder="mail@example.com" >
+    
+      <input type="number" name="contact" id="contact" placeholder="contact no." >
+  
+      <input type="text" name="text" placeholder="Address here..." ></textarea>
+                      
+    
+    <p class="usersubmit">
+      <input type="submit" name="submit" value="Submit" >
+    </p>
+  </form>
+
+
+
+
+
+                            </div>
+
+
+
+
+
+
+
+<script>
+    function yesnoCheck() {
+        if (document.getElementById('yesCheck').checked) {
+            document.getElementById('ifYes').style.visibility = 'visible';
+        } else document.getElementById('ifYes').style.visibility = 'hidden';
+
+    }
+</script>
+<script>
+    // Quantity Calculations
+    const buttons = [5, 10, 20, 50, 100, 0];
+    let current = 5;
+    let amount = 25;
+
+    const cInput = document.getElementById('cInput');
+
+    function calculate(custom) {
+        if (custom) {
+            amount = cInput.value * 5 + '.00';
+            document.getElementById('amount').innerText = amount;
+            document.getElementById('amount2').innerText = amount;
+
+        } else {
+            amount = current * 5 + '.00';
+            document.getElementById('amount').innerText = amount;
+            document.getElementById('amount2').innerText = amount;
+        }
+    }
+
+    for (let i = 0; i < buttons.length; i++) {
+        let button = document.getElementById(buttons[i].toString());
+
+        button.addEventListener('click', function () {
+            if(!button.classList.contains("is-primary")) {
+                button.classList.add("is-primary");
+                button.classList.remove("is-outlined");
+
+                let remove = document.getElementById(current);
+
+                remove.classList.remove("is-primary");
+                remove.classList.add("is-outlined");
+                current = buttons[i];
+                calculate();
+            }
+
+            if(current === 0) {
+                button.style.display = "none";
+                cInput.style.display = "block";
+                cInput.focus();
+            } else {
+                document.getElementById("0").style = "block";
+                cInput.style.display = "none";
+            }
+        });
+    }
+
+    // Form Calculations
+    const entities = [1, 2];
+    let currentE = 1;
+
+    const bizz = document.getElementById("bizzform");
+    const indy = document.getElementById("indyform");
+    indy.style.display = "none";
+
+    for (let i = 0; i < entities.length; i++) {
+        let button = document.getElementById(entities[i].toString());
+
+        button.addEventListener('click', function () {
+            if(!button.classList.contains("is-primary")) {
+                button.classList.add("is-primary");
+                button.classList.remove("is-outlined");
+
+                let remove = document.getElementById(currentE);
+
+                remove.classList.remove("is-primary");
+                remove.classList.add("is-outlined");
+                currentE = entities[i];
+            }
+
+            if(currentE === 1) {
+                indy.style.display = "none";
+                bizz.style.display = "block";
+            } else if(currentE === 2) {
+                indy.style.display = "block";
+                bizz.style.display = "none";
+            }
+        });
+    }
+
+    // Label Calculations
+    let selectedLabel = "business";
+    let radios = document.getElementsByName('labelType');
+    for (let i = 0, length = radios.length; i < length; i++)
+    {
+        if (radios[i].checked)
+        {
+            selectedLabel = radios[i].value;
+            break;
+        }
+    }
+
+    const clabels = ["bradiolabel", "cradiolabel", "aradiolabel"];
+    const clabel = document.getElementById("clabel");
+    const cradio = document.getElementById("cradiolabel");
+
+    clabel.style.display = "none";
+
+    for (let i = 0; i < clabels.length; i++) {
+        const button = document.getElementById(clabels[i]);
+        button.addEventListener('click', function () {
+            if(cradio.checked === true) {
+                clabel.style.display = "block";
+            }
+            else {
+                clabel.style.display = "none";
+            }
+        });
+    }
+
+    // Destination Calculations
+    const dcheck = document.getElementById("dcheck");
+    const dfield = document.getElementById("destination");
+    dfield.style.display = "none";
+    let dchecked = true;
+
+    dcheck.addEventListener('click', function () {
+        if(dcheck.checked === true) {
+            dfield.style.display = "none";
+            dchecked = true;
+        }
+        else {
+            dfield.style.display = "block";
+            dchecked = false;
+        }
+    });
+
+</script>
+
+</center>
+</div>
+    </section>
+ 
+      <link rel="stylesheet" href="footer/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  
+ <footer>
+   <div class="content">
+     <div class="left box">
+       <div class="upper">
+         <div class="topic">About us</div>
+         <p>For over 25 years we have been creating and distributing activity booklets to sick and injured children in hospitals nationwide. The name of our booklet is also our mission statement. "Healing Hands."</p>
+       </div>
+       <div class="lower">
+         <div class="topic">Contact us</div>
+         <div class="phone">
+           <a href="#"><i class="fas fa-phone-volume"></i>+1 8776612665</a>
+         </div>
+         <div class="email">
+           <a href="#"><i class="fas fa-envelope"></i>number1publications@live.ca</a>
+         </div>
+       </div>
+     </div>
+     <div class="middle box">
+       <div class="topic">Our Supporters</div>
+       <div><img src="img/img3.png" width="200px"></div>
+         <div><img src="img/img4.png" width="200px"></div>
+       <div><img src="img/img5.png" width="200px"></div>
+     
+     </div>
+     <div class="right box">
+       <div class="topic">Social Media</div>
+       
+         
+             <div class="icons">
+    <a href="#" class="fb"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+    <a href="#" class="insta"><i class="fab fa-instagram"></i></a>
+    <a href="#" class="yt"><i class="fab fa-youtube"></i></a>
+  </div>
+         </div>
+       </form>
+     </div>
+   </div>
+   <div class="bottom">
+     <p>Copyright © 2022 <a href="#">Number 1 Books</a> All rights reserved</p>
+   </div>
+ </footer>
+
+    <script>
+        const mobileNav = document.querySelector('.mobile-nav')
+        const menuBtn = document.querySelector('.menu-btn')
+        const navlinks = document.querySelector('.nav-links')
+        const closeBtn = document.querySelector('.close-btn')
+
+        mobileNav.addEventListener('click',(e)=>{
+            navlinks.classList.toggle('mobile-menu')
+            if(e.target === menuBtn){
+                menuBtn.replaceWith(closeBtn)
+                closeBtn.style.display = 'block'
+            }
+            if(e.target === closeBtn){
+                closeBtn.replaceWith(menuBtn)
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<?php
+$host = "localhost"; //IP of your database
+$userName = "kinfotec_admin"; //Username for database login
+$userPass = "Chirag.k99"; //Password associated with the username
+$database = "kinfotec_staff"; //Your database name
+
+$connectQuery = mysqli_connect($host,$userName,$userPass,$database);
+
+if(mysqli_connect_errno()){
+    echo mysqli_connect_error();
+    exit();
+}else{
+    $selectQuery = "SELECT * FROM `blog` ORDER BY `id` DESC";
+    $result = mysqli_query($connectQuery,$selectQuery);
+    if(mysqli_num_rows($result) > 0){
+    }else{
+        $msg = "No Record found";
+    }
+}
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number 1 Books</title>
+    <!-- ==== CSS ==== -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1 class="logo">NUMBER 1 BOOKS</h1>
+        <ul class="nav-links">
+             <li class="active"><a href="index.php">Home</a></li>
+            <li><a href="book.php">The Book</a></li>
+<li class="ctn"><a  href="donate.php">Donate Books Now</a></li>
+            <li><a href="blog.php">Blog</a></li>
+  <li><a href="about.php">About</a></li>
+            <li><a href="index.php">Contact</a></li>
+           
+        </ul>
+       <div class="mobile-nav">
+        <img src="./img/menu-btn.png" alt="" class="menu-btn">
+        <h1 class="close-btn">X</h1>
+       </div>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <h3>Blog</h3>
+            <div class="line"></div>
+            <h2>Latest Blogs</h2>
+<br>
+            <a href="book.php" class="ctn">See the book</a>
+ <a href="book.php" class="ctn">Learn More</a>
+        </div>
+    </header>
+
+    <!-- == Events == -->
+    <section class="events">
+        <div class="title">
+            <h1></h1>
+            <div class="line"></div>
+        </div>
+           <?=$msg;?>
+            <?php
+                while($row = mysqli_fetch_assoc($result)){?>
+ 
+    <center>
+<h2><?php echo $row['name']; ?></h2>
+<p>--<?php echo $row['date']; ?></p>
+<p><?php echo $row['content']; ?></p>
+<p>Written by :- <?php echo $row['writer']; ?></p>
+<br>
+   <?}?><br>
+        
+</center>
+<br>
+</div>
+    </section>
+   <link rel="stylesheet" href="footer/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  
+ <footer>
+   <div class="content">
+     <div class="left box">
+       <div class="upper">
+         <div class="topic">About us</div>
+         <p>For over 25 years we have been creating and distributing activity booklets to sick and injured children in hospitals nationwide. The name of our booklet is also our mission statement. "Healing Hands."</p>
+       </div>
+       <div class="lower">
+         <div class="topic">Contact us</div>
+         <div class="phone">
+           <a href="#"><i class="fas fa-phone-volume"></i>+1 8776612665</a>
+         </div>
+         <div class="email">
+           <a href="#"><i class="fas fa-envelope"></i>number1publications@live.ca</a>
+         </div>
+       </div>
+     </div>
+     <div class="middle box">
+       <div class="topic">Our Supporters</div>
+       <div><img src="img/img3.png" width="200px"></div>
+         <div><img src="img/img4.png" width="200px"></div>
+       <div><img src="img/img5.png" width="200px"></div>
+     
+     </div>
+     <div class="right box">
+       <div class="topic">Social Media</div>
+       
+         
+             <div class="icons">
+    <a href="#" class="fb"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+    <a href="#" class="insta"><i class="fab fa-instagram"></i></a>
+    <a href="#" class="yt"><i class="fab fa-youtube"></i></a>
+  </div>
+         </div>
+       </form>
+     </div>
+   </div>
+   <div class="bottom">
+     <p>Copyright © 2022 <a href="#">Number 1 Books</a> All rights reserved</p>
+   </div>
+ </footer>
+
+    <script>
+        const mobileNav = document.querySelector('.mobile-nav')
+        const menuBtn = document.querySelector('.menu-btn')
+        const navlinks = document.querySelector('.nav-links')
+        const closeBtn = document.querySelector('.close-btn')
+
+        mobileNav.addEventListener('click',(e)=>{
+            navlinks.classList.toggle('mobile-menu')
+            if(e.target === menuBtn){
+                menuBtn.replaceWith(closeBtn)
+                closeBtn.style.display = 'block'
+            }
+            if(e.target === closeBtn){
+                closeBtn.replaceWith(menuBtn)
+            }
+        })
+    </script>
+</body>
+</html>
