@@ -68,24 +68,14 @@ input[type=submit]:hover {
 header {
     width: 100vw;
     height: 80vh;
-    background-image: url('./img/header-bg.png');
+     background-image: url('./img/1253.jpg');
     background-position: bottom;
     background-size: cover;
     display: flex;
     align-items: flex-end;
     justify-content: center;
 }
-@media only screen and (max-width: 400px) {
-  header {
-      width: 100vw;
-    height: 80vh;
-    background-image: url('./img/1253.jpg');
-    background-position: bottom;
-    background-size: cover;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-  }
+  
 .header-content {
     margin-bottom: 100px;
     color: whitesmoke;
@@ -235,6 +225,9 @@ p {
 
 /* Mobile device */
 @media only screen and (max-width:850px){
+   header {
+    background-image: url('./img/header-bg.png');
+    }
     .menu-btn {
         display: block;
     }
